@@ -1,0 +1,11 @@
+[package]
+name = "game"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+decay_engine.workspace = true
+bevy_tweening.workspace = true
+bevy.workspace = true
+ui_loading = { path = "../ui_loading"}
+ui_menu    = { path = "../ui_menu"}
