@@ -1,26 +1,42 @@
 [package]
 name = "decay_race"
 version = "0.0.1"
+edition = "2021"
 readme = "README.md"
 
 [workspace]
 resolver = "2"
 
 members = [
+#    ui for menu and basics
+    "crates/ui_loading",
+    "crates/ui_menu",
 
+#    export
+    "crates/game"
 ]
 
 [[bin]]
 name = "space_app"
 path = "src/main.rs"
 
+
+
 [dependencies]
+game = { path = "crates/game"}
 bevy.workspace = true
 decay_engine.workspace = true
+bevy_asset_loader.workspace = true
+bevy-inspector-egui.workspace = true
+bevy_tweening.workspace = true
 
 [workspace.dependencies]
 bevy         = { version = "0.14.2", features = ["file_watcher"] }
 decay_engine = { git = "https://github.com/Wyatt65/decay_engine.git" }
+bevy_asset_loader = { version = "0.21.0", features = ["2d"] }
+bevy-inspector-egui = { version = "0.26.0"}
+bevy_tweening = { version = "0.11.0", features = ["bevy_sprite", "bevy_ui", "bevy_text"]}
+
 
 [workspace.lints.clippy]
 doc_markdown = "warn"
