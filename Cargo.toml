@@ -14,7 +14,7 @@ members = [
 
 #    export
     "crates/game"
-]
+, "crates/ui_style", "crates/ui", "crates/ui_core", "crates/game_states", "crates/core"]
 
 [[bin]]
 name = "space_app"
@@ -32,7 +32,8 @@ bevy_tweening.workspace = true
 
 [workspace.dependencies]
 bevy         = { version = "0.14.2", features = ["file_watcher"] }
-decay_engine = { git = "https://github.com/Wyatt65/decay_engine.git" }
+decay_engine = { path = "../decay_engine" }
+# decay_engine = { git = "https://github.com/Wyatt65/decay_engine.git" }
 bevy_asset_loader = { version = "0.21.0", features = ["2d"] }
 bevy-inspector-egui = { version = "0.26.0"}
 bevy_tweening = { version = "0.11.0", features = ["bevy_sprite", "bevy_ui", "bevy_text"]}

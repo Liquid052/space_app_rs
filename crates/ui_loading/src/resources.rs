@@ -1,3 +1,4 @@
 mod config;
-mod asset_collections;
 
+// export
+pub use config::*;

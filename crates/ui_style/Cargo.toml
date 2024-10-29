@@ -1,0 +1,12 @@
+[package]
+name = "ui_style"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy-inspector-egui.workspace = true
+decay_engine.workspace = true
+bevy.workspace = true
+
+
+
