@@ -1,7 +1,7 @@
 use bevy::app::App;
 use bevy::prelude::*;
 use bevy::window::WindowResized;
-use decay_engine::prelude::AppState;
+use space_engine::prelude::AppState;
 use ui_core::prelude::UiBackground;
 use crate::systems::*;
 

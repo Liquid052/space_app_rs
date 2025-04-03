@@ -126,7 +126,7 @@ pub fn setup_copyright(mut commands: Commands, asset_server: Res<AssetServer>) {
             // Add text to the parent node
             parent.spawn(TextBundle {
                 text: Text::from_section(
-                    "© 2024 Nomad games. All Rights Reserved.",
+                    "test build",
                     TextStyle {
                         font: asset_server.load("core/fonts/jbmono_light.ttf"),
                         font_size: 20.0,

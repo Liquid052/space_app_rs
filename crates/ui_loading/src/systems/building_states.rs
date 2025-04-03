@@ -1,6 +1,6 @@
 use std::time::Duration;
 use bevy::prelude::*;
-use decay_engine::prelude::EngineBuildFinished;
+use space_engine::prelude::EngineBuildFinished;
 use crate::prelude::*;
 use crate::systems::{reset_ui_tweens, set_ui_finished};
 

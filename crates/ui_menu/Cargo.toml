@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 bevy.workspace = true
 ui_core.path = "../ui_core"
-decay_engine.workspace = true
+space_engine.workspace = true
 bevy_asset_loader.workspace = true
 bevy-inspector-egui.workspace = true
 bevy_tweening.workspace = true

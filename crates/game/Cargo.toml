@@ -4,6 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-decay_engine.workspace = true
 bevy.workspace = true
-ui.path = "../ui"
+game_commands = { path = "../game_commands" }
+game_states = { path = "../game_states" }
+game_utils = { path = "../game_utils" }
+
+[lints]
+workspace = true

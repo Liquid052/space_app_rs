@@ -1,6 +1,6 @@
 use bevy::ecs::system::SystemId;
 use bevy::prelude::{Commands, Local, Query, Res, State, Text, TextureAtlas, With};
-use decay_engine::prelude::LoadingStates;
+use space_engine::prelude::LoadingStates;
 use crate::prelude::*;
 use crate::systems::reset_ui_tweens;
 

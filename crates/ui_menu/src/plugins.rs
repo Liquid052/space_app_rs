@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use decay_engine::prelude::*;
+use space_engine::prelude::*;
 use ui_core::prelude::InMainMenu;
 use crate::plugins::scale_background::ScaleBackgroundPlugin;
 use crate::prelude::UiMenuCollection;

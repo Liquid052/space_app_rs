@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 bevy-inspector-egui.workspace = true
-decay_engine.workspace = true
+space_engine.workspace = true
 bevy.workspace = true
 
 

@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use decay_engine::prelude::{AppState, BuildingStates, LoadingStates};
+use space_engine::prelude::{AppState, BuildingStates, LoadingStates};
 
 
 #[derive(SubStates, Default, Clone, Copy, PartialEq, Eq, Hash, Debug)]

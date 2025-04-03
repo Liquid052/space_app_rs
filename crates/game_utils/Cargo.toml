@@ -1,9 +1,10 @@
 [package]
-name = "ui_core"
+name = "game_utils"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 bevy.workspace = true
-bevy_asset_loader.workspace = true
-space_engine.workspace = true
+
+[lints]
+workspace = true

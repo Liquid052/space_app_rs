@@ -1,6 +1,6 @@
 use bevy::app::{App, Plugin};
 use bevy::prelude::AppExtStates;
-use decay_engine::prelude::*;
+use space_engine::prelude::*;
 use crate::components::{Ui, UiBackground};
 use crate::prelude::{InLoadingOrMenu, InMainMenu, InSettings, JbFonts, LoadingBarCollection};
 use crate::states::{InLoadGame, InMenu, LoadGameState, SettingsState};

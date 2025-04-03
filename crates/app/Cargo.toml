@@ -1,11 +1,10 @@
 [package]
-name = "ui_loading"
+name = "app"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 space_engine.workspace = true
 bevy.workspace = true
-bevy_tweening.workspace = true
-bevy_asset_loader.workspace = true
-ui_core.path = "../ui_core"
+ui.path = "../ui"
+game.path = "../game"

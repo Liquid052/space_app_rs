@@ -1,7 +1,7 @@
 use bevy::app::{App, Plugin, PluginGroupBuilder};
 use bevy::prelude::{AppExtStates, PluginGroup};
 use bevy_tweening::TweeningPlugin;
-use decay_engine::prelude::Loading;
+use space_engine::prelude::Loading;
 use ui_core::prelude::UiCorePlugin;
 use ui_loading::plugins::UiLoadingPlugin;
 use ui_menu::prelude::UiMenuPlugin;

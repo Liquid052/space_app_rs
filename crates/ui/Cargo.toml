@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 bevy.workspace  = true
-decay_engine.workspace = true
+space_engine.workspace = true
 bevy_tweening.workspace = true
 
 ui_core.path    = "../ui_core"
