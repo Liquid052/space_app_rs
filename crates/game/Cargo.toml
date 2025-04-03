@@ -1,0 +1,13 @@
+[package]
+name = "game"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy.workspace = true
+game_commands = { path = "../game_commands" }
+game_states = { path = "../game_states" }
+game_utils = { path = "../game_utils" }
+
+[lints]
+workspace = true

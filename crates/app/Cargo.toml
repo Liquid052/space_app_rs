@@ -1,0 +1,10 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+space_engine.workspace = true
+bevy.workspace = true
+ui.path = "../ui"
+game.path = "../game"
