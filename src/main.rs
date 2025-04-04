@@ -10,6 +10,7 @@ use bevy::prelude::*;
 use bevy::render::view::RenderLayers;
 use bevy_inspector_egui::bevy_egui::{EguiContexts, EguiPlugin};
 use bevy_inspector_egui::egui;
+use bevy_inspector_egui::quick::WorldInspectorPlugin;
 use app::prelude::*;
 
 
@@ -26,8 +27,9 @@ fn main() {
                 cam_target: None,
             })
         )
+        .add_plugins(WorldInspectorPlugin::new())
         .add_plugins(AppPlugins)
-        .add_plugins(EguiPlugin)
+        // .add_plugins(EguiPlugin)
         .register_type::<FocusMode>()
         // resources
         .insert_resource(ClearColor(Color::srgb(0.0, 0.0, 0.0)))

@@ -4,11 +4,11 @@ use bevy::color::palettes::css::{BLUE, YELLOW};
 use bevy::color::palettes::tailwind::{CYAN_400, GRAY_300, GRAY_400};
 use bevy::ecs::system::RunSystemOnce;
 use bevy::ecs::world::Command;
-use bevy::prelude::{Camera, Commands, Entity, EventWriter, Gray, NextState, Query, ResMut, With, World};
+use bevy::prelude::{Camera, Commands, Entity, EventWriter, Gray, NextState, OrthographicProjection, Query, ResMut, With, World};
 use bevy_inspector_egui::bevy_egui::EguiContexts;
 use bevy_inspector_egui::egui;
 use bevy_inspector_egui::egui::Align2;
-use space_engine::prelude::{AppState, Body, CameraManagementExt, FocusMode, Keplerian, Moon, Planet, SpaceCommandsExt, SpaceDepth, SpaceLayer, SpaceShip, Star, TwoBodyBuilder};
+use space_engine::prelude::{AppState, Body, CameraManagementExt, FocusMode, Keplerian, MainCamera, Moon, Planet, SpaceCommandsExt, SpaceDepth, SpaceLayer, SpaceShip, Star, TwoBodyBuilder};
 use ui_core::prelude::{LoadGameState, SettingsState};
 
 pub fn menu(
@@ -32,20 +32,15 @@ pub fn menu(
 
             ui.button("Play").clicked()
                 .then(|| {
+                    let zoom_system_id = commands.register_one_shot_system(zoom_out);
+
                     next_app_state.set(AppState::InGame { paused: false });
                     commands.add(SpawnWorld1);
                     commands.add(AddFocusMode);
                     commands.add(UpdateMass);
                     commands.set_camera_layer(SpaceLayer);
+                    commands.run_system(zoom_system_id);
                 });
-            //ui.button("WORLD 2").clicked()
-            //    .then(|| {
-            //        next_app_state.set(AppState::InGame { paused: false });
-            //        commands.add(SpawnWorld2);
-            //        commands.add(AddFocusMode);
-            //        commands.add(UpdateMass);
-            //        commands.set_camera_layer(SpaceLayer);
-            //    });
 
             ui.separator();
 
@@ -53,6 +48,13 @@ pub fn menu(
                 .then(|| exit_ev.send(AppExit::Success));
         });
 
+}
+
+fn zoom_out(mut cams: Query<&mut OrthographicProjection, With<MainCamera>>) {
+    cams.iter_mut()
+        .for_each(|mut orto| {
+            orto.scale = 60.0;
+        });
 }
 pub struct AddFocusMode;
 
