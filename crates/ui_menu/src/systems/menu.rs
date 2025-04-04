@@ -1,5 +1,7 @@
 use bevy::app::AppExit;
 use bevy::color::{Color, LinearRgba, Srgba};
+use bevy::color::palettes::css::{BLUE, YELLOW};
+use bevy::color::palettes::tailwind::{CYAN_400, GRAY_300, GRAY_400};
 use bevy::ecs::system::RunSystemOnce;
 use bevy::ecs::world::Command;
 use bevy::prelude::{Camera, Commands, Entity, EventWriter, Gray, NextState, Query, ResMut, With, World};
@@ -106,14 +108,14 @@ fn setup_space1(mut commands: Commands) {
     commands.add(Star::new("Sol")
         .mass(1.7565459e28)
         .radius(261_600_000.0)
-        .color(Color::WHITE)
+        .color(YELLOW.into())
     );
 
     commands.add(
         Planet::new("Kerbin")
             .mass(5.2915158e22)
             .radius(600_000.0)
-            .color(Color::WHITE)
+            .color(CYAN_400.into())
             .semi_major_axis(23_599_840_256.0)
     );
 
@@ -121,17 +123,17 @@ fn setup_space1(mut commands: Commands) {
         Moon::new("Mun")
             .mass(9.7599050e20)
             .radius(300_000.0)
-            .color(Color::WHITE)
+            .color(GRAY_400.into())
             .semi_major_axis(18_000_000.0)
             .mean_anomaly_at_epoch(-1.0)
             .orbiting("Kerbin"),
     );
 
     commands.add(
-        Moon::new("Mun 2")
+        Moon::new("Asteroid")
             .mass(9.7599068e20)
             .radius(300_000.0)
-            .color(Color::WHITE)
+            .color(GRAY_300.into())
             .eccentricity(0.03565)
             .semi_major_axis(23608596822.4)
             .argument_of_periapsis(1.845)
