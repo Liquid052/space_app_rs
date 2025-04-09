@@ -25,11 +25,10 @@ fn main() {
                 cam_background_enabled: true,
                 auto_soi_update: true,
                 cam_target: None,
+                test: false,
             })
         )
-        .add_plugins(WorldInspectorPlugin::new())
         .add_plugins(AppPlugins)
-        // .add_plugins(EguiPlugin)
         .register_type::<FocusMode>()
         // resources
         .insert_resource(ClearColor(Color::srgb(0.0, 0.0, 0.0)))
