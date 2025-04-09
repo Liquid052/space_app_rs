@@ -8,7 +8,7 @@ use bevy::prelude::{Camera, Commands, Entity, EventWriter, Gray, NextState, Orth
 use bevy_inspector_egui::bevy_egui::EguiContexts;
 use bevy_inspector_egui::egui;
 use bevy_inspector_egui::egui::Align2;
-use space_engine::prelude::{AppState, Body, CameraManagementExt, FocusMode, Keplerian, MainCamera, Moon, Planet, SpaceCommandsExt, SpaceDepth, SpaceLayer, SpaceShip, Star, TwoBodyBuilder};
+use space_engine::prelude::{AppState, Body, CameraManagementExt, FocusMode, Keplerian, MainCamera, Moon, Planet, SpaceCommandsExt, SpaceLayer, SpaceShip, Star};
 use ui_core::prelude::{LoadGameState, SettingsState};
 
 pub fn menu(
@@ -95,13 +95,7 @@ fn update_mass(mut star: Query<&mut Keplerian>) {
         });
 }
 
-pub struct SpawnWorld2;
 
-impl Command for SpawnWorld2 {
-    fn apply(self, world: &mut World) {
-        world.run_system_once(setup_space2);
-    }
-}
 
 fn setup_space1(mut commands: Commands) {
     commands.create_space("Test space");
@@ -149,46 +143,4 @@ fn setup_space1(mut commands: Commands) {
             .color(Color::srgb(1.0,1.0,0.0).into())
             .orbiting("Kerbin")
     );
-}
-
-fn setup_space2(mut commands: Commands) {
-    commands.create_space("Test space");
-    commands.space_cam_follow("Kerbin + Mun");
-
-    commands.add(
-        Star::new("Sol")
-            .mass(1.7565459e28)
-            .radius(261_600_000.0)
-            .color(Color::WHITE)
-    );
-
-    commands.add(
-        TwoBodyBuilder::new(
-            Planet::new("Kerbin")
-                .mass(5.2915158e22)
-                .radius(700_000.0)
-                .color(Srgba::gray(0.7).into())
-                .semi_major_axis(23_599_840_256.0)
-                .belt(1_000_000.0, 1_00_000.0, Color::srgb(0.0, 0.5, 0.0)),
-            Moon::new("Mun")
-                .mass(4.2915158e22)
-                .radius(500_000.0)
-                .color(Srgba::gray(0.7).into())
-                .semi_major_axis(28_000_000.0),
-        )
-            .orbiting("Sol")
-            .eccentricity_1(0.0)
-    );
-
-    commands.add(
-        Moon::new("Mun 2")
-            .mass(6.2099068e21)
-            .radius(450_000.0)
-            .color(Color::LinearRgba(LinearRgba::new(1.0,1.0,0.0,1.0)))
-            .eccentricity(0.034)
-            .semi_major_axis(23608596822.4)
-            .argument_of_periapsis(1.845)
-            .mean_anomaly_at_epoch(-1.773)
-    );
-
 }
