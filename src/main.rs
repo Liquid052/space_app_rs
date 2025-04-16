@@ -29,6 +29,7 @@ fn main() {
             })
         )
         .add_plugins(AppPlugins)
+        .add_plugins(EguiPlugin)
         .register_type::<FocusMode>()
         // resources
         .insert_resource(ClearColor(Color::srgb(0.0, 0.0, 0.0)))

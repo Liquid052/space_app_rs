@@ -136,11 +136,11 @@ fn setup_space1(mut commands: Commands) {
             .mean_anomaly_at_epoch(-1.773),
     );
 
-    commands.add(
-        SpaceShip::new("Vessel")
-            .semi_major_axis(2_000_000.0)
-            .mean_anomaly_at_epoch(-0.7)
-            .color(Color::srgb(1.0,1.0,0.0).into())
-            .orbiting("Kerbin")
-    );
+    // commands.add(
+    //     SpaceShip::new("Vessel")
+    //         .semi_major_axis(2_000_000.0)
+    //         .mean_anomaly_at_epoch(-0.7)
+    //         .color(Color::srgb(1.0,1.0,0.0).into())
+    //         .orbiting("Kerbin")
+    // );
 }
