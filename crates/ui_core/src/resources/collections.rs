@@ -5,7 +5,7 @@ use bevy::prelude::*;
 pub struct LoadingBarCollection {
     #[asset(texture_atlas_layout(tile_size_x = 48, tile_size_y = 16, columns = 5, rows = 5))]
     pub layout: Handle<TextureAtlasLayout>,
-    #[asset(path = "core/textures/progress_bars.png")]
+    #[asset(path = "core/non_commercial/progress_bars.png")]
     #[asset(image(sampler = nearest))]
     pub sprite: Handle<Image>,
 }
